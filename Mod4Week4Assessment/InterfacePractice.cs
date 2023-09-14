@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Define the interface
 public interface IVehicle 
 {
-    string Manufacturer { get; set; }
+    string Manufacturer { get; }
 
     void Start();
     void Accelerate();
@@ -15,7 +15,7 @@ public interface IVehicle
 // Implement the interface in different vehicle classes
 public class Car : IVehicle
 {
-    public string Manufacturer { get; set; }
+    public string Manufacturer { get; private set; }
     public int Year { get; private set; }
 
     public Car(string manufacturer, int year)
@@ -47,7 +47,7 @@ public class Car : IVehicle
 
 public class Bicycle : IVehicle
 {
-    public string Manufacturer { get; set; }
+    public string Manufacturer { get; private set; }
     public bool HasBasket { get; private set; }
 
     public Bicycle(string manufacturer, bool hasBasket)
